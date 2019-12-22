@@ -35,6 +35,6 @@ echo "    -> Done."
 if [ "${INPUT_CALCULATE_METADATA}" = "true" ]
 then
     echo "Requesting metadata (re)-calculation"
-    curl --silent --show-error --fail --location --request POST --user "${INPUT_API_USER}:${INPUT_API_KEY}" "${INPUT_API_URL}/calc_metadata/${INPUT_API_USER}/${INPUT_REPOSITORY}"
+    curl --silent --show-error --fail --location --request POST --user "${INPUT_API_USER}:${INPUT_API_KEY}" -H "${HEADER_GPG_PASSPHRASE}" "${INPUT_API_URL}/calc_metadata/${INPUT_API_USER}/${INPUT_REPOSITORY}"
     echo "    -> Done."
 fi
