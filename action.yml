@@ -15,10 +15,10 @@ inputs:
     description: 'Username for API usage'
     required: true
   api_key:
-    description: 'Key for API usage'
+    description: 'Key for API usage, it can be obtained from the user profile page'
     required: true
   gpg_passphrase:
-    description: 'Passphrase for GPG key, see https://bintray.com/docs/api/#gpg_signing_passphrase'
+    description: 'Passphrase for GPG key, see https://bintray.com/docs/api/#gpg_signing_passphrase. Only required when using a password-protected GPG key.'
     required: false
   repository:
     description: 'Name of the repository'
@@ -30,24 +30,24 @@ inputs:
     description: 'Version of the package'
     required: true
   upload_path:
-    description: 'Upload path at Bintray site'
+    description: 'Upload path at Bintray site. Some repository layouts require this, e.g. for Debian it is typical to use pool/main/m. Does not need leading or trailing slashes.'
     required: false
     default: '/'
   publish:
-    descript: 'Whether to publish the package right away, use "1" to enable'
+    description: 'Whether to publish the package right away, use "1" to enable'
     required: false
     default: '0'
   calculate_metadata:
     description: 'Whether to let Bintray re-calculate metadata of the repository'
     default: 'true'
   deb_distribution:
-    description: '(Debian only, required when targeting Debian)'
+    description: 'Debian only, required when targeting Debian using the Automatic index layout'
     required: false
   deb_component:
-    description: '(Debian only, required when targeting Debian)'
+    description: 'Debian only'
     required: false
   deb_architecture:
-    description: '(Debian only, required when targeting Debian)'
+    description: 'Debian only, required when targeting Debian. Example i386,amd64'
     required: false
 
 runs:
