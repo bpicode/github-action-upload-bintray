@@ -24,3 +24,8 @@ jobs:
       run: |
         wget -qO- https://github.com/wagoodman/dive/releases/download/v0.9.1/dive_0.9.1_linux_amd64.tar.gz | sudo tar xvz -C /usr/local/bin
         dive github-action-upload-bintray
+
+    - name: Vulnerability scan (trivy)
+      run: |
+        wget -qO- https://github.com/aquasecurity/trivy/releases/download/v0.3.1/trivy_0.3.1_Linux-64bit.tar.gz | sudo tar xvz -C /usr/local/bin
+        trivy github-action-upload-bintray
