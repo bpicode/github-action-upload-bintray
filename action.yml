@@ -1,0 +1,57 @@
+name: 'action-upload-bintray'
+description: 'Upload files to JFrog Bintray'
+branding:
+  icon: 'upload'
+  color: 'green'
+inputs:
+  file:
+    description: 'Path to the file that should be uploaded'
+    required: true
+  api_url:
+    description: 'URL of the Bintray API server'
+    required: false
+    default: 'https://api.bintray.com'
+  api_user:
+    description: 'Username for API usage'
+    required: true
+  api_key:
+    description: 'Key for API usage'
+    required: true
+  gpg_passphrase:
+    description: 'Passphrase for GPG key, see https://bintray.com/docs/api/#gpg_signing_passphrase'
+    required: false
+  repository:
+    description: 'Name of the repository'
+    required: true
+  package:
+    description: 'Name of the package'
+    required: true
+  version:
+    description: 'Version of the package'
+    required: true
+  upload_path:
+    description: 'Upload path at Bintray site'
+    required: false
+    default: '/'
+  publish:
+    descript: 'Whether to publish the package right away, use "1" to enable'
+    required: false
+    default: '0'
+  calculate_metadata:
+    description: 'Whether to let Bintray re-calculate metadata of the repository'
+    default: 'true'
+  deb_distribution:
+    description: '(Debian only, required when targeting Debian)'
+    required: false
+  deb_component:
+    description: '(Debian only, required when targeting Debian)'
+    required: false
+  deb_architecture:
+    description: '(Debian only, required when targeting Debian)'
+    required: false
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.file }}
