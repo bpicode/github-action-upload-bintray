@@ -29,7 +29,7 @@ then
 fi
 
 echo "Uploading file"
-curl --silent --show-error --fail --location --request POST --upload-file "${1}" --user "${INPUT_API_USER}:${INPUT_API_KEY}" -H "${HEADER_GPG_PASSPHRASE}" -H "${HEADER_DEBIAN_DISTRIBUTION}" -H "${HEADER_DEBIAN_COMPONENT}" -H "${HEADER_DEBIAN_ARCHITECTURE}" "${INPUT_API_URL}/content/${INPUT_API_USER}/${INPUT_REPOSITORY}/${INPUT_PACKAGE}/${INPUT_VERSION}/${INPUT_UPLOAD_PATH}/${FILENAME};publish=${INPUT_PUBLISH}"
+curl --silent --show-error --fail --location --request PUT --upload-file "${1}" --user "${INPUT_API_USER}:${INPUT_API_KEY}" -H "${HEADER_GPG_PASSPHRASE}" -H "${HEADER_DEBIAN_DISTRIBUTION}" -H "${HEADER_DEBIAN_COMPONENT}" -H "${HEADER_DEBIAN_ARCHITECTURE}" "${INPUT_API_URL}/content/${INPUT_API_USER}/${INPUT_REPOSITORY}/${INPUT_PACKAGE}/${INPUT_VERSION}/${INPUT_UPLOAD_PATH}/${FILENAME};publish=${INPUT_PUBLISH}"
 echo "    -> Done."
 
 if [ "${INPUT_CALCULATE_METADATA}" = "1" ]
