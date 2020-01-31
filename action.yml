@@ -20,6 +20,9 @@ inputs:
   gpg_passphrase:
     description: 'Passphrase for GPG key, see https://bintray.com/docs/api/#gpg_signing_passphrase. Only required when using a password-protected GPG key.'
     required: false
+  repository_user:
+    description: 'Repository owner username'
+    required: true
   repository:
     description: 'Name of the repository'
     required: true
