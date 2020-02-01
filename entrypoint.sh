@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-set -e
+set -euf -o pipefail
 
 FILENAME=$(echo "${INPUT_FILE}" | xargs -n 1 basename)
 
