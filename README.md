@@ -23,6 +23,7 @@ jobs:
         api_user: example-user
         api_key: ${{ secrets.BINTRAY_API_KEY }} # An API key can be obtained from the user profile page.
         gpg_passphrase: ${{ secrets.BINTRAY_GPG_PASSPHRASE }} # Optional, for this to work Bintray requires a GPG public/private keypair configured for the repository owner (individual or organization).
+        repository_user: example-user
         repository: my_repository
         package: example-package
         version: '1.0'
