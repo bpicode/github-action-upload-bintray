@@ -29,7 +29,7 @@ jobs:
         version: '1.0'
         upload_path: pool/main/m # Typical for debian repository layout
         publish: 1
-        calculate_metadata: true # Schedule metadata calcuation after upload
+        calculate_metadata: true # Schedule metadata calculation after upload
         deb_distribution: stretch,buster,sid
         deb_component: main
         deb_architecture: amd64
